@@ -2,13 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package week3;
+package week3.short_1;
+
+import week3.Sort;
 
 /**
  *
  * @author LENOVO
  */
-public class BubbleSort extends Sort{
+public class BubbleSort extends Sort {
     
     public BubbleSort(int capacity){
         super(capacity);

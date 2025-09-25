@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package week1.Short_10;
+package week1.short_10;
 
 import view.Untils;
 
@@ -15,7 +15,6 @@ public class RunShort_10 {
     public static void main(String[] args) {
         int n = Untils.getIntValue("number of array");
         LinearSearch ls = new LinearSearch(n);
-        ls.randomArray();
         int x = Untils.getIntValue2("number to search");
         int found = ls.linearSearch(x);
         ls.show();

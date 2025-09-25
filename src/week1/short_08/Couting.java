@@ -17,6 +17,7 @@ public class Couting {
     public Couting(String s){
         content = s;
     }
+
     public Map<Character, Integer> countLetter(){
         Map<Character, Integer> map = new LinkedHashMap<>();
         for(char x: content.toCharArray()){
@@ -25,6 +26,7 @@ public class Couting {
         }
         return map;
     }
+
     public Map<String, Integer> countWord(){
         Map<String, Integer> map = new LinkedHashMap<>();
         StringTokenizer st = new StringTokenizer(content);
@@ -34,9 +36,11 @@ public class Couting {
         }
         return map;
     }
+
     public void showCountLetter(){
         System.out.println(countLetter());
     }
+
     public void showCountWord(){
         System.out.println(countWord());
     }

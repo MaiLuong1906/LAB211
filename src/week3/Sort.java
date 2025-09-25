@@ -4,6 +4,8 @@
  */
 package week3;
 
+import view.Untils;
+
 import java.util.Random;
 
 /**
@@ -15,17 +17,12 @@ public abstract class Sort {
     protected int size;
     
     public Sort(int capacity){
-        arr = new int[capacity];
+        arr = Untils.randomArray(capacity);
         this.size = capacity;
     }
-    
-    public int[] randomArray(){
-        Random random = new Random();
-        for(int i = 0; i < size; i++){
-            arr[i] = random.nextInt(10);
-        }
+
+    public int[] getArr(){
         return arr;
     }
-    
     public abstract int[] sort(int[] arr);
 }

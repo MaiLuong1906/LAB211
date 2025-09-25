@@ -4,6 +4,7 @@
  */
 package view;
 
+import java.util.Random;
 import java.util.Scanner;
 import week2.short_61.Circle;
 import week2.short_61.Rectangle;
@@ -105,7 +106,8 @@ public class Untils {
             return operator;
         }
     }
-    
+
+    // Nhap kich thuoc hinh tam giac
     public static Triangle inputTriagle() {
         while(true){
         double sideA = getDouble1("side A of Triangle");
@@ -119,19 +121,29 @@ public class Untils {
         return triangle;
         }
     }
-    
+
+    // Nhap kich thuoc hinh tam giac
     public static Rectangle inputRetangle(){
         double width = Untils.getDouble1("width of rectangle");
         double length = Untils.getDouble1("Length of rectangle");
         Rectangle rectangle = new Rectangle(width, length);
         return rectangle;
     }
-    
+
+    // Nhap kich thuoc hinh tam giac
     public static Circle inputCircle(){
         double radius = Untils.getDouble1("radius of Circle");
         Circle circle = new Circle(radius);
         return circle;
     }
     
-    
+    // Lay 1 mang ngau nhien
+    public static int[] randomArray(int capacity){
+        int[] arr = new int[capacity];
+        Random random = new Random();
+        for(int i = 0; i < capacity; i++){
+            arr[i] = random.nextInt(10);
+        }
+        return arr;
+    }
 }

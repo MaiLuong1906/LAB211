@@ -2,40 +2,37 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package week2;
+package week2.short_61;
 
 /**
  *
  * @author LENOVO
  */
-public class Triangle extends Shape{
-    private double sideA, sideB, sideC;
-    public Triangle(double a, double b, double c){
-        super("Triangle");
-        sideA = a;
-        sideB = b;
-        sideC = c;
-    }
+public class Rectangle extends Shape{
+    private double width, length;
     
+    public Rectangle(double a, double b){
+        super("Rectangle");
+        width = a;
+        length = b;
+    }
     @Override
     public double getPerimeter() {
-        return sideA + sideB + sideC;
+        return (width + length) * 2;
     }
 
     @Override
     public double getArea() {
-        double p = getPerimeter() / 2;
-        double rs = p * (p - sideA) * (p - sideB) * (p - sideC);
-        return Math.sqrt(rs);
+        return width * length;
     }
 
     @Override
     public void printResult() {
         System.out.println("-----"+name+"-----");
-        System.out.println("Side A: " + sideA);
-        System.out.println("Side B: " + sideB);
-        System.out.println("Side C: " + sideC);
+        System.out.println("Width " + width);
+        System.out.println("Length: " + length);
         System.out.printf("Area %.2f\n", getArea());
         System.out.printf("Perimeter: %.1f\n", getPerimeter());
     }
+    
 }

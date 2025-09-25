@@ -5,9 +5,9 @@
 package view;
 
 import java.util.Scanner;
-import week2.Circle;
-import week2.Rectangle;
-import week2.Triangle;
+import week2.short_61.Circle;
+import week2.short_61.Rectangle;
+import week2.short_61.Triangle;
 
 /**
  *

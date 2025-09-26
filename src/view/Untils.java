@@ -19,7 +19,7 @@ public class Untils {
     
     // Nhap 1 chuoi String
     public static String getValue(String prompt){
-        System.out.print("Enter "+prompt+" :");
+        System.out.print("Enter "+prompt+": ");
         return sc.nextLine();
     }
     

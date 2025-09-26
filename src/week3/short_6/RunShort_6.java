@@ -1,23 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package week1.short_10;
+package week3.short_6;
 
 import view.Untils;
+import week1.short_10.Search;
 
-
-/**
- *
- * @author LENOVO
- */
-public class RunShort_10 {
+public class RunShort_6 {
     public static void main(String[] args) {
         int n = Untils.getIntValue("number of array");
         Search search = new Search(n);
         int x = Untils.getIntValue2("number to search");
-        int found = search.runLinearSeach(x);
-        search.show();
+        int found = search.runBinarySearch(x);
         if(found > 0){
             System.out.println("Found "+ x+ " at "+found+" index.");
         }
@@ -25,5 +16,4 @@ public class RunShort_10 {
             System.out.println(x+" not found.");
         }
     }
-
 }

@@ -6,6 +6,7 @@ package week3.short_1;
 
 import java.util.Arrays;
 import view.Untils;
+import week3.Sort;
 
 /**
  *
@@ -14,9 +15,9 @@ import view.Untils;
 public class RunShort_1 {
     public static void main(String[] args) {
         int size = Untils.getIntValue("size of array");
-        BubbleSort bub = new BubbleSort(size);
-        int[] arr = bub.getArr();
-        System.out.println("Unsorted array: "+ Arrays.toString(arr));
-        System.out.println("Sorted array : "+ Arrays.toString(bub.sort(arr)));
+        Sort sort = new Sort(size);
+        System.out.println("Unsorted Array: "+ Arrays.toString(sort.getArr()));
+        sort.runBubbleSort();
+        System.out.println("Sorted Array: "+ Arrays.toString(sort.getArr()));
     }
 }

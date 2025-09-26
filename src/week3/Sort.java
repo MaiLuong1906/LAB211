@@ -39,26 +39,26 @@ public class Sort {
         quickSort(arr, 0, arr.length -1);
     }
 
-    public void quickSort(int[] a, int L, int R){
+    public void quickSort(int[] a, int left, int right){
 
         //Base case
-        if(L >= R)return;
+        if(left >= right)return;
 
         // Tao key
-        int key = a[(L+R)/2];
+        int key = a[(left+right)/2];
 
         //Phan phoi
-        int pivot = partition(a, L, R, key);
+        int pivot = partition(a, left, right, key);
 
         //Chia
-        quickSort(a, L, pivot -1);
-        quickSort(a, pivot, R);
+        quickSort(a, left, pivot -1);
+        quickSort(a, pivot, right);
     }
 
     // Tra ve pivot
-    public int partition(int[] a, int L, int R, int key){
-        int i = L;
-        int j = R;
+    public int partition(int[] a, int left, int right, int key){
+        int i = left;
+        int j = right;
 
         while(i <= j){
             while(a[i] < key) i++;

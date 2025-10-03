@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import java.util.Scanner;
 import week2.short_61.Circle;
@@ -16,10 +18,11 @@ import week2.short_61.Triangle;
  */
 public class Untils {
     public static Scanner sc = new Scanner(System.in);
-    
+    public static LocalDate now = LocalDate.now();
+    public static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     // Nhap 1 chuoi String
     public static String getValue(String prompt){
-        System.out.print("Enter "+prompt+": ");
+        System.out.print(prompt+": ");
         return sc.nextLine();
     }
     
@@ -146,4 +149,93 @@ public class Untils {
         }
         return arr;
     }
+
+    // Nhập 1 chuỗi kèm với độ dài quy định
+    public static String inputWith(String prompt, int length){
+        while(true){
+            System.out.print(prompt+": ");
+            String val = sc.nextLine();
+            if(val.length() > length) {
+                System.out.println("Data input is  invalid");
+                System.out.println(prompt+" no more than "+length+" character");
+                continue;
+            }
+            return val;
+        }
+    }
+
+    public static int inputID(String prompt){
+        while(true){
+            try{
+                System.out.print(prompt+": ");
+                int val = Integer.parseInt(sc.nextLine());
+                if(val < 100000 || val > 999999) throw new Exception("");
+                return val;
+            }catch(Exception e){
+                System.out.println("ID is a 6 digits");
+            }
+        }
+    }
+
+    public static long getNumberWith(String prompt, int length){
+        while(true){
+            try{
+                long val = Long.parseLong(inputWith(prompt, length));
+                return val;
+            }catch(Exception e){
+                System.out.println(prompt+" is number "+length+" digit");
+            }
+        }
+    }
+
+    public static double inputScore(String prompt){
+        while(true){
+            try{
+                System.out.print(prompt + ": ");
+                double val = Double.parseDouble(sc.nextLine());
+                if(val < 0 || val > 100){
+                    System.out.println("Entrance English score is from 0 to 100");
+                    continue;
+                }
+                return val;
+            }catch(Exception e){
+                System.out.println("Please input digit values.");
+            }
+        }
+    }
+
+    public static int getIntWith(String prompt, int left, int right){
+        while(true){
+            try{
+                System.out.print(prompt + ": ");
+                int val = Integer.parseInt(sc.nextLine());
+                if(val > right || val < left){
+                    System.out.println(prompt+" must between "+left+" and "+ right);
+                }
+                return val;
+            }catch(Exception e){
+                System.out.println("Please input digit");
+            }
+        }
+    }
+
+    public static int getYear(String prompt){
+        int check = now.getYear();
+        while(true){
+            try{
+                System.out.print(prompt+": ");
+                int year = Integer.parseInt(sc.nextLine());
+                if(year > check){
+                    System.out.println(prompt+ " must be before current year");
+                    continue;
+                }
+                return year;
+            }catch(Exception e){
+                System.out.println("Please input digit!");
+            }
+        }
+    }
+
+
+
 }

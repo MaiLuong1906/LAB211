@@ -2,16 +2,14 @@ package week4.short105;
 
 import view.Menu;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class StudentManagement extends Menu{
-    private Map<Integer, Student> listS = new HashMap<>();
+    private Storage stS;
 
-    public StudentManagement(){
+    public StudentManagement(Storage st){
         super("Student Management", new String[]{"Input", "Print", "Exit"});
+        stS = st;
     }
 
     @Override
@@ -35,21 +33,18 @@ public class StudentManagement extends Menu{
     public boolean add(){
         Student s = new Student();
         s.inputAll();
-        if(listS.containsKey(s.getId())) return false;
-        listS.put(s.getId(), s);
-        return true;
+        return stS.addStudent(s);
     }
 
     public void print(){
-        ArrayList<Student> list = new ArrayList<>(listS.values());
-        list.sort(Comparator.comparing(Student :: getYearAdmiss));
+        List<Student> listS = stS.getListStudent();
+        listS.sort(Comparator.comparing(Student :: getYearAdmiss));
         int i = 1;
         System.out.println("# - ID - Fullname - Phone number - Year of birth - Major - Year of admission - Entrance English score ");
-        for(Student s : list){
+        for(Student s : listS){
             System.out.println(i+" - "+ s);
             i++;
         }
     }
-
 
 }

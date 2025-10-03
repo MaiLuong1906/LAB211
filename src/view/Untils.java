@@ -164,16 +164,15 @@ public class Untils {
         }
     }
 
-    public static int inputID(String prompt){
+    // 1 chuỗi ID có n chữ số
+    public static String inputID(String prompt, int n){
         while(true){
-            try{
-                System.out.print(prompt+": ");
-                int val = Integer.parseInt(sc.nextLine());
-                if(val < 100000 || val > 999999) throw new Exception("");
-                return val;
-            }catch(Exception e){
-                System.out.println("ID is a 6 digits");
+            String val = getValue(prompt);
+            if(!val.matches("\\d{" + n + "}")){
+                System.out.println("ID is a "+n+" digits ");
+                continue;
             }
+            return val;
         }
     }
 
@@ -236,6 +235,23 @@ public class Untils {
         }
     }
 
+    public static String getName(String prompt){
+        while(true){
+            System.out.print(prompt+": ");
+            String name = sc.nextLine();
+            if(!checkName(name)){
+                System.out.println(prompt+" is alphabet and blanks");
+                continue;
+            }
+            return name;
+        }
+    }
 
+    public static boolean checkName(String name){
+        for(int i = 0; i < name.length(); i++){
+            if(!Character.isAlphabetic(name.charAt(i)) && name.charAt(i) !=' ')return false;
+        }
+        return true;
+    }
 
 }

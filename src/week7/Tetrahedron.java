@@ -1,0 +1,22 @@
+package week7;
+
+public class Tetrahedron extends ThreeDimensionalShape{
+    private double edge;
+    public Tetrahedron(double edge){
+        this.edge = edge;
+    }
+    @Override
+    public double getArea() {
+        return Math.sqrt(3) * edge * edge;
+    }
+
+    @Override
+    public double getVolume() {
+        return (Math.sqrt(2)/12) * edge * edge * edge;
+    }
+
+    @Override
+    public String toString(){
+        return String.format("Tetrahedron(3D) with edge: %.2f has Area = %.2f and Volume = %.2f", edge, getArea(), getVolume());
+    }
+}

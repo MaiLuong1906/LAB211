@@ -254,4 +254,44 @@ public class Untils {
         return true;
     }
 
+    public static LocalDate inputDate(String prompt){
+        while(true){
+            try{
+                System.out.println("Enter "+prompt+ " format(yyyy-MM-dd): ");
+                LocalDate rs = LocalDate.parse(sc.nextLine());
+                return rs;
+            }catch(Exception e){
+                System.out.println("Invalid. Input again with format(yyyy-MM-dd) !");
+            }
+        }
+    }
+
+    public static LocalDate dateAfter(String prompt, LocalDate check){
+        while(true){
+            try{
+                System.out.println("Enter "+prompt+ " format(yyyy-MM-dd): ");
+                LocalDate rs = LocalDate.parse(sc.nextLine());
+                if(rs.isBefore(check)){
+                    System.out.println("Date must after " +check);
+                    continue;
+                }
+                return rs;
+            }catch(Exception e){
+                System.out.println("Invalid. Input again with format(yyyy-MM-dd) !");
+            }
+        }
+    }
+
+    public static String getYOrN(){
+        while(true){
+            System.out.println("Enter your choice(Y/N):");
+            String choice = sc.nextLine().toLowerCase();
+            if(!choice.equalsIgnoreCase("Y") && !choice.equalsIgnoreCase("N")){
+                System.out.println("Enter again !!!");
+                continue;
+            }
+            return choice;
+        }
+    }
+
 }
